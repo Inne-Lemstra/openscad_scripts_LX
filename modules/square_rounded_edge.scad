@@ -20,20 +20,18 @@ difference(){
             place_edge_y = coord_edge[idx][1] * (heigth - 2*edge_size);
             translate([place_edge_x, place_edge_y, 0]){
                 intersection(){
-                    //substract circle from square, create egde pieces 
+                    //substract circle from (quarter) square, create egde pieces 
                     difference(){
-                        square(edge_size *2);
-                        //move circle from origin center to x+ and y+
+                        translate( edge_size * coord_edge[idx]) {
+                            square(edge_size);
+                        }
+                        //move circle from origin center to x+ and y+                    
                         translate([edge_size,edge_size]) {
                                 circle(edge_size);
-                        }
-                    }
-                    //capture one edge by overlapping 1/4 square corner
-                    translate( edge_size * coord_edge[idx]) {
-                        square(edge_size);
+                        }       
                     }
                 }
             }
-        }   
+        }
 }
 
