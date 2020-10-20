@@ -266,3 +266,4 @@ function neighbour_blocks(y_row, x_col, heigth, grid) =
         
             [x,y, z]
         ];
+
